@@ -12,7 +12,7 @@ if __name__ == "__main__":
             fieldnames=[
                 "time",
                 "cd_status",
-                "cd_eclapsed",
+                "cd_elapsed",
                 "net_status",
                 "net_elapsed",
                 "gpsLat",
@@ -32,7 +32,7 @@ if __name__ == "__main__":
                     "http://cdwifi.cz/portal/api/vehicle/realtime", timeout=5
                 )
                 row_data["cd_status"] = cd_data.status_code
-                row_data["cd_eclapsed"] = cd_data.elapsed.total_seconds()
+                row_data["cd_elapsed"] = cd_data.elapsed.total_seconds()
                 row_data |= cd_data.json()
             except Exception as e:
                 pprint.pprint(e)
